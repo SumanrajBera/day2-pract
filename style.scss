@@ -16,9 +16,13 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+h1,
+h2 {
+    line-height: 1;
+}
+
 main {
     width: 100%;
-    height: 200vh;
 
     nav {
         width: 100%;
@@ -37,10 +41,8 @@ main {
 
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
-
-            
         }
 
         .links {
@@ -48,7 +50,7 @@ main {
             border-radius: .2rem;
 
             a {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
                 text-decoration: none;
                 color: inherit;
                 font-weight: 600;
@@ -98,10 +100,164 @@ main {
 
             padding: 1rem;
 
-            h1 {
+            .subheading {
+                font-weight: 700;
+                color: #e0e0e0;
                 line-height: 1;
+            }
+
+            h1 {
                 font-size: clamp(2.5rem, 10vw, 7rem);
                 // font-size: 2.5rem;
+            }
+
+            .btnGrp {
+                margin-top: .5rem;
+                display: flex;
+
+                button {
+                    font-size: 1.2rem;
+                    font-family: inherit;
+                    border: none;
+                    outline: none;
+                    padding: .5rem;
+                    border-radius: .5rem;
+                    font-weight: 700;
+                }
+            }
+
+            .socials {
+                color: white;
+                margin-top: 1rem;
+
+                display: flex;
+                gap: 1rem;
+
+                .icon {
+                    aspect-ratio: 1/1;
+                    border-radius: 50%;
+                    background: #0c0c0c48;
+                    backdrop-filter: blur(5px);
+                    padding: .5rem;
+
+                    display: grid;
+                    place-items: center;
+
+                    box-shadow: 0px 0px 2px;
+
+                    i {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .about {
+        width: 100%;
+        padding: 3rem 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .aboutHeading {
+            text-align: center;
+
+            .subheading {
+                font-weight: 700;
+                color: #ada4a4;
+                line-height: 1;
+            }
+
+            h2 {
+                font-size: clamp(1.8rem, 8vw, 5rem);
+            }
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            .imgCard {
+                width: 100%;
+                aspect-ratio: 1/1;
+                background: linear-gradient(#0c0c0c46, #0c0c0c56), url(./assets/aboutSection.jpg);
+                background-size: cover;
+                padding: 1rem;
+                border-radius: .5rem;
+                color: white;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .imgHeading {
+                    font-size: clamp(1.5rem, 4vw, 2rem);
+                    font-weight: 700;
+                }
+
+                .bottom {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+
+                    .info {
+                        font-weight: 500;
+
+                        span {
+                            font-size: 1.5rem;
+                            font-weight: 700;
+                        }
+                    }
+
+                    .icon {
+                        font-size: clamp(4rem, 10vw, 6rem);
+                        line-height: 1;
+                    }
+                }
+            }
+
+            .textCard {
+                width: 100%;
+                
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 1rem;
+
+                background-color: #e5e5e5;
+                padding: 1rem;
+
+                border-radius: .5rem;
+
+                .top {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5rem;
+                }
+
+                .icon {
+                    background-color: #f2f2f2;
+                    width: fit-content;
+                    border-radius: 50%;
+
+                    display: grid;
+                    place-items: center;
+
+                    padding: .5rem;
+
+                    i {
+                        font-size: 2rem;
+                        line-height: 1;
+                    }
+                }
+
+                .heading {
+                    font-size: clamp(1.8rem, 5vw, 2.5rem);
+                    font-weight: 700;
+                    line-height: 1;
+                }
             }
         }
     }
@@ -118,8 +274,6 @@ main {
                 display: flex;
                 gap: 1rem;
 
-                
-
                 a {
                     display: block;
                     position: relative;
@@ -134,7 +288,7 @@ main {
     }
 }
 
-@media (min-width: 750px) {
+@media (min-width: 700px) {
     main {
         .hero {
             .text {
@@ -144,6 +298,57 @@ main {
                 h1 {
                     transform: translateX(-.5rem);
                 }
+            }
+        }
+
+        .about {
+            width: 100%;
+            padding: 3rem 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+
+            .cards {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 1rem;
+
+                .imgCard {
+                    aspect-ratio: 1/.7;
+                }
+
+                .imgCard, .textCard:nth-child(2) {
+                   flex: 1 1 0;
+                }
+
+                .textCard:nth-child(3) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1000px) {
+    main {
+
+        .about {
+            padding-block: 4rem;
+
+            .cards {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                gap: 1rem;
+
+                .imgCard, .textCard{
+                    flex: 1 1 0;
+                }
+
             }
         }
     }
