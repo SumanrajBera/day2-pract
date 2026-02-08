@@ -21,6 +21,10 @@ h2 {
     line-height: 1;
 }
 
+h2 {
+    font-size: clamp(1.8rem, 8vw, 5rem);
+}
+
 main {
     width: 100%;
 
@@ -220,7 +224,7 @@ main {
 
             .textCard {
                 width: 100%;
-                
+
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -259,6 +263,34 @@ main {
                     line-height: 1;
                 }
             }
+        }
+    }
+
+    .impact {
+        width: 100%;
+        height: 100vh;
+        max-height: 800px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 1rem;
+
+        padding: 3rem 1rem;
+
+
+        background: linear-gradient(#0c0c0c46, #0c0c0c56), url(./assets/impact.jpg);
+        background-position: right;
+        background-size: cover;
+
+        color: white;
+
+        .impactHeading,
+        .info,
+        .checks {
+            text-align: center
         }
     }
 }
@@ -320,8 +352,9 @@ main {
                     aspect-ratio: 1/.7;
                 }
 
-                .imgCard, .textCard:nth-child(2) {
-                   flex: 1 1 0;
+                .imgCard,
+                .textCard:nth-child(2) {
+                    flex: 1 1 0;
                 }
 
                 .textCard:nth-child(3) {
@@ -345,7 +378,8 @@ main {
                 justify-content: space-between;
                 gap: 1rem;
 
-                .imgCard, .textCard{
+                .imgCard,
+                .textCard {
                     flex: 1 1 0;
                 }
 

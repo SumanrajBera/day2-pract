@@ -20,6 +20,10 @@ h2 {
   line-height: 1;
 }
 
+h2 {
+  font-size: clamp(1.8rem, 8vw, 5rem);
+}
+
 main {
   width: 100%;
 }
@@ -213,6 +217,26 @@ main .about .cards .textCard .heading {
   font-weight: 700;
   line-height: 1;
 }
+main .impact {
+  width: 100%;
+  height: 100vh;
+  max-height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  padding: 3rem 1rem;
+  background: linear-gradient(rgba(12, 12, 12, 0.2745098039), rgba(12, 12, 12, 0.337254902)), url(./assets/impact.jpg);
+  background-position: right;
+  background-size: cover;
+  color: white;
+}
+main .impact .impactHeading,
+main .impact .info,
+main .impact .checks {
+  text-align: center;
+}
 
 @media (min-width: 600px) {
   main nav .links {
@@ -256,7 +280,8 @@ main .about .cards .textCard .heading {
   main .about .cards .imgCard {
     aspect-ratio: 1/0.7;
   }
-  main .about .cards .imgCard, main .about .cards .textCard:nth-child(2) {
+  main .about .cards .imgCard,
+  main .about .cards .textCard:nth-child(2) {
     flex: 1 1 0;
   }
   main .about .cards .textCard:nth-child(3) {
@@ -274,7 +299,8 @@ main .about .cards .textCard .heading {
     justify-content: space-between;
     gap: 1rem;
   }
-  main .about .cards .imgCard, main .about .cards .textCard {
+  main .about .cards .imgCard,
+  main .about .cards .textCard {
     flex: 1 1 0;
   }
 }/*# sourceMappingURL=style.css.map */
