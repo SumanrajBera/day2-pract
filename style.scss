@@ -276,21 +276,84 @@ main {
         justify-content: center;
         align-items: center;
 
-        border-radius: 1rem;
-
         padding: 3rem 1rem;
 
 
-        background: linear-gradient(#0c0c0c46, #0c0c0c56), url(./assets/impact.jpg);
+        background: linear-gradient(#0c0c0c6b, #0c0c0c56), url(./assets/impact.jpg);
         background-position: right;
         background-size: cover;
 
         color: white;
 
         .impactHeading,
-        .info,
-        .checks {
+        .info{
             text-align: center
+        }
+
+        .subheading {
+            font-size: clamp(.8rem, 3vw, 1rem);
+            font-weight: 700;
+            color: #e1e1e1;
+        }
+
+        .info {
+            margin-top: .5rem;
+            width: 90%;
+            max-width: 800px;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            text-wrap: pretty;
+            line-height: 1;
+
+            font-size: clamp(.9rem, 3vw, 1.2rem);
+        }
+
+        .check {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: clamp(.2rem, 3vw, .5rem);
+            text-align: center;
+
+            .icon {
+                flex-shrink: 0;
+                width: clamp(1rem, 3vw, 1.8rem);
+                aspect-ratio: 1/1;
+                background-color: rgba(34, 34, 34, 0.541);
+                backdrop-filter: blur(5px);
+                color: rgb(51, 179, 51);
+                box-shadow: 0 0 2px white;
+                border-radius: 50%;
+                display: grid;
+                place-items: center;
+
+                i {
+                    font-size: clamp(.8rem, 3vw, 1.2rem);
+                }
+            }
+
+            .para {
+                font-size: clamp(.8rem, 3vw, 1rem);
+            }
+        }
+
+        .check+.check {
+            margin-top: .8rem;
+        }
+
+        .btnGrp {
+            margin-top: .5rem;
+            display: flex;
+
+            button {
+                font-size: 1.2rem;
+                font-family: inherit;
+                border: none;
+                outline: none;
+                padding: .5rem;
+                border-radius: .5rem;
+                font-weight: 700;
+            }
         }
     }
 }
