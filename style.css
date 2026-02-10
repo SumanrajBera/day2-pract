@@ -292,6 +292,56 @@ main .impact .btnGrp button {
   border-radius: 0.5rem;
   font-weight: 700;
 }
+main .project {
+  width: 100%;
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+main .project .projectHeading {
+  text-align: center;
+}
+main .project .projectHeading .subheading {
+  font-weight: 700;
+  color: #ada4a4;
+  line-height: 1;
+}
+main .project .projectHeading h2 {
+  font-size: clamp(1.8rem, 8vw, 5rem);
+}
+main .project .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+main .project .cards .card {
+  width: 100%;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: white;
+}
+main .project .cards .card .title {
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1;
+}
+main .project .cards .card:nth-child(1) {
+  background: linear-gradient(rgba(12, 12, 12, 0.2745098039), rgba(12, 12, 12, 0.4823529412)), url(./assets/solarInstallation.jpg);
+  background-size: cover;
+}
+main .project .cards .card:nth-child(2) {
+  background: linear-gradient(rgba(12, 12, 12, 0.2745098039), rgba(12, 12, 12, 0.337254902)), url(./assets/monitorSolar.jpg);
+  background-size: cover;
+}
+main .project .cards .card:nth-child(3) {
+  background: linear-gradient(rgba(12, 12, 12, 0.2745098039), rgba(12, 12, 12, 0.337254902)), url(./assets/community.jpg);
+  background-size: cover;
+}
 
 @media (min-width: 600px) {
   main nav .links {
@@ -308,6 +358,25 @@ main .impact .btnGrp button {
   }
   main nav .menu {
     display: none;
+  }
+  main .project .cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  main .project .cards .card {
+    width: 50%;
+  }
+  main .project .cards .card:nth-child(1),
+  main .project .cards .card:nth-child(1) {
+    flex: 1 1 0;
+    aspect-ratio: 1/1;
+  }
+  main .project .cards .card:nth-child(3) {
+    width: 100%;
+    aspect-ratio: 1/0.5;
+    background-position: bottom;
   }
 }
 @media (min-width: 700px) {
@@ -357,5 +426,11 @@ main .impact .btnGrp button {
   main .about .cards .imgCard,
   main .about .cards .textCard {
     flex: 1 1 0;
+  }
+  main .project .cards .card {
+    flex: 1 1 0;
+  }
+  main .project .cards .card .title {
+    text-wrap: balance;
   }
 }/*# sourceMappingURL=style.css.map */
