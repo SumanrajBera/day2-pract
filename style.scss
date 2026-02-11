@@ -24,6 +24,10 @@ h2 {
 h2 {
     font-size: clamp(1.8rem, 8vw, 5rem);
 }
+main, nav {
+    max-width: 1600px;
+    margin-inline: auto;
+}
 
 main {
     width: 100%;
@@ -418,6 +422,155 @@ main {
             }
         }
     }
+
+    .testimonials {
+        width: 100%;
+        padding: 3rem 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .testimonialHeading {
+            text-align: center;
+
+            .subheading {
+                font-weight: 700;
+                color: #ada4a4;
+                line-height: 1;
+            }
+
+            h2 {
+                font-size: clamp(1.8rem, 8vw, 5rem);
+            }
+        }
+
+        .box {
+            width: 100%;
+            display: flex;
+            overflow: hidden;
+            flex-direction: column-reverse;
+
+            .testimonialGrp {
+                display: flex;
+                // overflow: hidden;
+                transition: all 1s ease;
+
+                border-radius: 1rem;
+
+                .testimonial {
+                    background-color: #E5E5E5;
+                    border-radius: 1rem;
+
+                    width: 100%;
+                    flex-shrink: 0;
+                    padding: 1rem;
+
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5rem;
+
+                    .icon {
+                        background-color: #f2f2f2;
+                        width: fit-content;
+                        aspect-ratio: 1/1;
+                        font-size: 1.5rem;
+                        border-radius: .2rem;
+
+                        display: grid;
+                        place-items: center;
+                    }
+
+                    .text {
+                        font-weight: 600;
+                        font-size: clamp(1rem, 3vw, 2.5rem);
+                    }
+
+                    hr {
+                        border: 1px dashed;
+                        margin-block: .5rem;
+                    }
+
+                    .cutomerInfo {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+
+                        .img {
+                            width: 4rem;
+                            aspect-ratio: 1/1;
+                            border-radius: 50%;
+                            overflow: hidden;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+
+                    .cutomerName {
+                        font-weight: 700;
+                    }
+
+                    .profession {
+                        font-size: .8rem;
+                    }
+                }
+            }
+
+            .imgGrp {
+                width: 100%;
+                aspect-ratio: 1/1;
+                border-radius: 1rem;
+                position: relative;
+
+                display: flex;
+                background-color: #E5E5E5;
+
+                .img {
+                    position: absolute;
+                    inset: 0;
+
+                    border-radius: 1rem;
+                    overflow: hidden;
+                    width: 100%;
+                    flex-shrink: 0;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+
+                    opacity: 0;
+                    z-index: 0;
+
+                    transform: all ease .5s;
+                    transition: all 1s ease;
+                }
+
+                .active {
+                    opacity: 1;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    padding: 3rem 1rem;
+    font-size: 1.2rem;
+
+    background: linear-gradient(#2a365d, #4b6292);
+    background-size: cover;
+
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (min-width: 600px) {
@@ -515,6 +668,27 @@ main {
                 }
             }
         }
+
+        .testimonials {
+
+            .box {
+                flex-direction: row;
+                gap: 0;
+
+                .testimonialGrp {
+                    width: 70%;
+
+                    .testimonial {
+                        padding: 2rem;
+                    }
+                }
+
+                .imgGrp {
+                    width: 30%;
+                    aspect-ratio: auto;
+                }
+            }
+        }
     }
 }
 
@@ -552,6 +726,10 @@ main {
                     }
                 }
             }
+        }
+
+        .testimonials {
+            padding-inline: 3rem;
         }
     }
 }
